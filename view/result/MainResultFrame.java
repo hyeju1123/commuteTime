@@ -33,5 +33,14 @@ public class MainResultFrame extends JFrame {
 
 //        setVisible(true);
     }
+    public void setDeparture(String departure){
+        exchangeResultPanel.setDeparture(departure);
+    }
+    public void setDestination(String destination){
+        exchangeResultPanel.setDestination(destination);
+    }
+    public void setCommuteCost(int cost){
+        exchangeResultPanel.setCommuteCost(cost);
+    }
 
 }

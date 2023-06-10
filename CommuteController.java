@@ -5,6 +5,7 @@ import commuteTime.view.result.MainResultFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class CommuteController {
     private CommuteModel model;
@@ -33,8 +34,20 @@ public class CommuteController {
             model.setDestinationLocation(destinationLocation);
 
             // Model에서 계산된 결과를 View에 전달한다.
-            model.calculateCommuteTime();
-            double commuteCost = model.calculateCommuteCost();
+            try {
+                model.calculateCommuteTime();
+                inputView.setDuration(model.duration);
+            } catch (IOException | InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+            int commuteCost = model.calculateCommuteCost();
+            String departure = model.getDepartureName();
+            String destination = model.getDestinationName();
+
+            resultView.setDeparture(departure);
+            resultView.setDestination(destination);
+            resultView.setCommuteCost(commuteCost);
+
 //            resultView.displayCommuteCost(commuteCost);
             resultView.setVisible(true);
         }

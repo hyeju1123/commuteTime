@@ -1,16 +1,23 @@
 package commuteTime.view.input;
 
+import commuteTime.CommuteModel;
+import commuteTime.TestKakao;
+import commuteTime.TransitAPI;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class InputLocationPanel extends JPanel {
+    TransitAPI transitAPI;
 
     private final JTextField departureField;
     private final JTextField destinationField;
     private final JTextField departureTimeField;
+    String duration ="";
 
     public String getDeparture() {
         return departureField.getText();
@@ -22,6 +29,9 @@ public class InputLocationPanel extends JPanel {
 
     public String getDepartureTime() {
         return departureTimeField.getText();
+    }
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     public InputLocationPanel() {
@@ -61,11 +71,13 @@ public class InputLocationPanel extends JPanel {
         JPanel centerPanel = new JPanel(new GridLayout(1, 2, 15, 0));
         centerPanel.setBackground(Color.WHITE);
         departureField.setFont(new Font("NotoSans", Font.BOLD, 30));
-        departureField.setText("수원역");
+        departureField.setText("덕영대로 924");
         departureField.setHorizontalAlignment(JTextField.CENTER);
         destinationField.setFont(new Font("NotoSans", Font.BOLD, 30));
-        destinationField.setText("서울역");
+        destinationField.setText("청파로47길 100");
         destinationField.setHorizontalAlignment(JTextField.CENTER);
+
+        //transitAPI = new TransitAPI(this.getDeparture(),this.getDestination());
 
         departureField.setBorder(null);
         destinationField.setBorder(null);
@@ -109,7 +121,8 @@ public class InputLocationPanel extends JPanel {
         departureLabel.setBorder(null);
         bottomPanel.add(departureTimeField, BorderLayout.CENTER);
 
-        JLabel durationLabel = new JLabel("왕복 약 3시간 30분 소요");
+        JLabel durationLabel = new JLabel();
+        durationLabel.setText(duration);
         durationLabel.setFont(new Font("NotoSans", Font.BOLD, 18));
         durationLabel.setForeground(new Color(0x5F5F5F));
         durationLabel.setHorizontalAlignment(SwingConstants.CENTER);
