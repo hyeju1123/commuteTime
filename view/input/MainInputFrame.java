@@ -50,6 +50,9 @@ public class MainInputFrame extends JFrame {
         inputLocationPanel.setDuration(duration);
     }
 
+    public void addRequiredTimeButtonListener(ActionListener listener) {
+        inputLocationPanel.getDurationButton().addActionListener(listener);
+    }
     public void addSubmitButtonListener(ActionListener listener) {
         searchButtonPanel.getSearchButton().addActionListener(listener);
     }
