@@ -43,10 +43,12 @@ public class CommuteController {
             int commuteCost = model.calculateCommuteCost();
             String departure = model.getDepartureName();
             String destination = model.getDestinationName();
+            int fare = model.getFare();
 
             resultView.setDeparture(departure);
             resultView.setDestination(destination);
             resultView.setCommuteCost(commuteCost);
+            resultView.setFare(fare);
 
 //            resultView.displayCommuteCost(commuteCost);
             resultView.createResultFrame();

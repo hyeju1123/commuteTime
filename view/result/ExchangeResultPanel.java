@@ -7,7 +7,7 @@ import java.awt.*;
 public class ExchangeResultPanel extends JPanel {
 
     String departure, destination;
-    int commuteCost;
+    int commuteCost, fare;
     JLabel startLabel, endLabel, priceLabel, totalLabel;
 
     public void setDeparture(String departure) {
@@ -20,6 +20,10 @@ public class ExchangeResultPanel extends JPanel {
 
     public void setCommuteCost(int commuteCost) {
         this.commuteCost = commuteCost;
+    }
+
+    public void setFare(int fare) {
+        this.fare = fare;
     }
 
     public ExchangeResultPanel() {
@@ -115,7 +119,7 @@ public class ExchangeResultPanel extends JPanel {
         startLabel.setText(departure);
         endLabel.setText(destination);
         priceLabel.setText("<html><div style='text-align: center;'>시간을 돈으로 환산하면<br><font color='#000000'><b>"+commuteCost+"원</b></font> 입니다.</div></html>");
-        totalLabel.setText("총"+commuteCost*20+"원");
+        totalLabel.setText("총"+(commuteCost*20+fare)+"원");
     }
 
 }

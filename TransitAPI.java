@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 public class TransitAPI {
 
-    double fare;
+    int fare;
     double time;
     String commuteTime;
     String departureName;
@@ -64,7 +64,7 @@ public class TransitAPI {
         String[] arraysStr = response.split("[{|:,]");
 		
         time = Double.parseDouble(arraysStr[34]);
-        fare = Double.parseDouble(arraysStr[24]);
+        fare = Integer.parseInt(arraysStr[24]);
     }
     /*private static void jsonFileRead(String response) {
         JSONParser parser = new JSONParser();

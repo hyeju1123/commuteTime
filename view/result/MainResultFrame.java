@@ -45,5 +45,8 @@ public class MainResultFrame extends JFrame {
     public void setCommuteCost(int cost){
         exchangeResultPanel.setCommuteCost(cost);
     }
+    public void setFare(int fare){
+        exchangeResultPanel.setFare(fare);
+    }
 
 }

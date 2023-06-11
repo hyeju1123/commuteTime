@@ -12,6 +12,7 @@ public class CommuteModel {
     String duration;
     TransitAPI transitAPI;
     String departureName, destinationName;
+    int fare;
 
     public void setHourlyWage(double hourlyWage) {
         this.hourlyWage = hourlyWage;
@@ -38,6 +39,7 @@ public class CommuteModel {
         duration = transitAPI.commuteTime;
         departureName = transitAPI.departureName;
         destinationName = transitAPI.destinationName;
+        fare = transitAPI.fare;
         return duration;
     }
     public String getDepartureName() {
@@ -45,6 +47,10 @@ public class CommuteModel {
     }
     public String getDestinationName() {
         return this.destinationName;
+    }
+
+    public int getFare() {
+        return this.fare;
     }
 
     public int calculateCommuteCost() {
