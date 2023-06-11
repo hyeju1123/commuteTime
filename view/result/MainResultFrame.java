@@ -33,6 +33,9 @@ public class MainResultFrame extends JFrame {
 
 //        setVisible(true);
     }
+    public void createResultFrame(){
+        exchangeResultPanel.showResult();
+    }
     public void setDeparture(String departure){
         exchangeResultPanel.setDeparture(departure);
     }

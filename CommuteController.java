@@ -49,6 +49,7 @@ public class CommuteController {
             resultView.setCommuteCost(commuteCost);
 
 //            resultView.displayCommuteCost(commuteCost);
+            resultView.createResultFrame();
             resultView.setVisible(true);
         }
     }
