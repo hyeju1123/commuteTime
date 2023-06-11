@@ -18,7 +18,7 @@ public class InputWagePanel extends JPanel {
 
     public InputWagePanel() {
         setBackground(Color.WHITE);
-        setBorder(new EmptyBorder(15, 50, 15, 50));
+        setBorder(new EmptyBorder(5, 50, 15, 50));
         setLayout(new BorderLayout());
 
         JPanel topPanel = new JPanel(new GridLayout(1, 4, 10, 0));
@@ -87,13 +87,13 @@ public class InputWagePanel extends JPanel {
         wageUnitLabel.setFont(new Font("NotoSans", Font.PLAIN, 17));
         wageUnitLabel.setForeground(new Color(0x5F5F5F));
         wageUnitLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        wageUnitLabel.setBorder(new EmptyBorder(20, 0, 10, 0));
+        wageUnitLabel.setBorder(new EmptyBorder(10, 0, 10, 0));
         wagePanel.add(wageUnitLabel, BorderLayout.SOUTH);
         add(wagePanel, BorderLayout.CENTER);
 
         JPanel inputPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10)); // Change the layout to FlowLayout
         inputPanel.setBackground(Color.WHITE);
-        inputPanel.setBorder(new EmptyBorder(20, 0, 0, 0)); // Add uniform padding around the inputPanel
+        inputPanel.setBorder(new EmptyBorder(10, 0, 0, 0)); // Add uniform padding around the inputPanel
 
         JPanel workingDaysPanel = new JPanel(new BorderLayout());
         workingDaysPanel.setBackground(Color.WHITE);
@@ -101,7 +101,7 @@ public class InputWagePanel extends JPanel {
         workingDaysLabel.setFont(new Font("NotoSans", Font.PLAIN, 17));
         workingDaysLabel.setForeground(new Color(0x5F5F5F));
         workingDaysLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        workingDaysLabel.setBorder(new EmptyBorder(10, 0, 20, 0));
+        workingDaysLabel.setBorder(new EmptyBorder(10, 0, 10, 0));
         workingDaysField = new JTextField(6);
         workingDaysField.setFont(new Font("NotoSans", Font.BOLD, 25));
         workingDaysField.setText("180시간");
@@ -116,7 +116,7 @@ public class InputWagePanel extends JPanel {
         commutingDaysLabel.setFont(new Font("NotoSans", Font.PLAIN, 17));
         commutingDaysLabel.setForeground(new Color(0x5F5F5F));
         commutingDaysLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        commutingDaysLabel.setBorder(new EmptyBorder(10, 0, 20, 0));
+        commutingDaysLabel.setBorder(new EmptyBorder(10, 0, 10, 0));
         commutingDaysField = new JTextField(6);
         commutingDaysField.setFont(new Font("NotoSans", Font.BOLD, 25));
         commutingDaysField.setText("20일");

@@ -133,6 +133,7 @@ public class InputLocationPanel extends JPanel {
         durationLabel = new JLabel();
         durationLabel.setText(duration);
         durationLabel.setFont(new Font("NotoSans", Font.BOLD, 18));
+        durationLabel.setBorder(new EmptyBorder(15, 0, 0, 0));
         durationLabel.setForeground(new Color(0x5F5F5F));
         durationLabel.setHorizontalAlignment(SwingConstants.CENTER);
         bottomPanel.add(durationLabel, BorderLayout.SOUTH);
@@ -195,7 +196,3 @@ public class InputLocationPanel extends JPanel {
         }
     }
 }
-
-
-
-
