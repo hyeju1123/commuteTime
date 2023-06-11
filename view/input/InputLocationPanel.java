@@ -6,6 +6,7 @@ import commuteTime.TransitAPI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -19,6 +20,7 @@ public class InputLocationPanel extends JPanel {
     private final JTextField destinationField;
     private final JTextField departureTimeField;
     private final JButton durationButton;
+    JLabel durationLabel;
     String duration = "";
 
     public String getDeparture() {
@@ -39,6 +41,7 @@ public class InputLocationPanel extends JPanel {
 
     public void setDuration(String duration) {
         this.duration = duration;
+        durationLabel.setText(duration);
     }
 
     public InputLocationPanel() {
@@ -127,7 +130,7 @@ public class InputLocationPanel extends JPanel {
 
         bottomPanel.add(departureTimeFieldPanel, BorderLayout.CENTER);
 
-        JLabel durationLabel = new JLabel();
+        durationLabel = new JLabel();
         durationLabel.setText(duration);
         durationLabel.setFont(new Font("NotoSans", Font.BOLD, 18));
         durationLabel.setForeground(new Color(0x5F5F5F));
